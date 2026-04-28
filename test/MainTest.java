@@ -1,15 +1,24 @@
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+import java.util.Scanner;
 
 public class MainTest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-    @Test
-    void testSum() {
-        assertEquals(5, Main.sum(2, 3));
-    }
+        int n = sc.nextInt();
+        int[] a = new int[n];
 
-    @Test
-    void testNegative() {
-        assertEquals(-1, Main.sum(2, -3));
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+
+        int min = a[0];
+
+        for (int i = 1; i < n; i++) {
+            if (a[i] < min) {
+                min = a[i];
+            }
+        }
+
+        System.out.println(min);
     }
 }
